@@ -1,45 +1,243 @@
-# Cyber UI — 组件库官网与骨架
+<div align="center">
 
-这是 Cyber UI 组件库的官方文档站点与代码仓库（骨架）。本仓库同时保留组件库实现的位置（`src/lib/`），后续会逐步加入基于 Element Plus（Vue 3）的封装组件。
+# ⚡ Cyber UI
 
-快速开始
+**赛博朋克风格的 Vue 3 组件库 · 文档站点一体仓库**
 
-1. 安装依赖
+[![Vue 3](https://img.shields.io/badge/Vue-3.3-42b883?logo=vue.js&logoColor=white)](https://vuejs.org/)
+[![Vite](https://img.shields.io/badge/Vite-4.5-646cff?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Status](https://img.shields.io/badge/Status-Early%20Development-orange)](https://github.com/hopehyhp/cyber-ui)
 
-```bash
-npm install
+[组件文档](#-组件) · [快速开始](#-快速开始) · [Issue 反馈](https://github.com/hopehyhp/cyber-ui/issues)
+
+<br />
+
+<img src="https://img.shields.io/badge/主题-Dark%20%7C%20Light-22d3ee?style=for-the-badge" alt="themes" />
+<img src="https://img.shields.io/badge/风格-Cyberpunk-6366f1?style=for-the-badge" alt="style" />
+
+</div>
+
+---
+
+## ✨ 特性
+
+| | |
+| --- | --- |
+| 🎨 **双主题系统** | Dark / Light 一键切换，CSS 变量驱动，组件与文档站配色同步 |
+| 🧩 **Vue 3 原生** | Composition / Options API 均可，基于 Vite 极速 HMR |
+| 💠 **赛博视觉** | 青蓝 + 靛紫强调色、霓虹光晕、玻璃质感 surface |
+| 📦 **Monorepo 结构** | `src/lib/` 组件库与文档站同仓开发，改组件即见文档 |
+| 🔧 **可扩展图标** | 内置 `CIcon` + `registerIcon`，按需注册 SVG 路径 |
+
+---
+
+## 📸 预览
+
+> 运行 `npm run dev` 后访问本地文档站，首页可实时切换主题并预览色卡。
+
+```
+┌─────────────────────────────────────────────────────┐
+│  Cyber UI          组件 · Playground · 主题    [Dark]│
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│   ░░  Cyber UI  ░░   赛博朋克配色与组件预览          │
+│                                                     │
+│   ┌──────────────┐  ┌──────────────┐               │
+│   │ Theme preview│  │ Appearance   │               │
+│   │ ■ ■ ■ ■      │  │ [Dark][Light]│               │
+│   │ [Primary]    │  └──────────────┘               │
+│   └──────────────┘                                  │
+└─────────────────────────────────────────────────────┘
 ```
 
-2. 启动开发服务器
+---
+
+## 🚀 快速开始
+
+### 环境要求
+
+- **Node.js** ≥ 16
+- **npm** ≥ 8
+
+### 安装 & 启动
 
 ```bash
+# 克隆仓库
+git clone git@github.com:hopehyhp/cyber-ui.git
+cd cyber-ui
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
 ```
 
-项目结构（关键信息）
+浏览器打开终端提示的地址（默认 `http://localhost:5173`）。
 
-- `index.html` - 应用入口
-- `src/main.js` - Vue 应用挂载点，同时引入了主题样式 `src/styles/themes.css`
-- `src/App.vue` - 文档网站骨架（header、hero、组件占位、playground、主题展示）
-- `src/components/` - UI 独立组件（SiteHeader、ThemeSwitcher 等）
-- `src/styles/themes.css` - 赛博朋克风格色卡与 CSS 变量
-- `src/lib/` - 组件库实现占位，未来在此实现并导出我们的 Cyber 组件
+### 构建 & 预览
 
-主题与色卡
+```bash
+npm run build      # 生产构建
+npm run preview    # 预览构建产物
+```
 
-当前支持两套主题（通过给 `html` 添加 `.theme-blue` 切换）:
+---
 
-- 默认赛博（magenta / cyan）
-- 偏蓝赛博（blue / cyan）
+## 📦 组件
 
-组件开发注意
+| 组件 | 状态 | 文档路由 |
+| --- | :---: | --- |
+| `CButton` | ✅ 可用 | `/components/button` |
+| `CIcon` | ✅ 可用 | — |
+| `Palette` | ✅ 可用 | `/components/palette` |
+| `CInput` | 🚧 规划中 | `/components/input` |
+| `CBadge` | 🚧 规划中 | `/components/badge` |
 
-请在 `src/lib/` 下组织组件，并使用 `var(--...)` CSS 变量来读取主题色，这样可以在站点和组件之间统一切换主题。
+### 使用示例
 
-后续计划
+```vue
+<script setup>
+import { CButton, CIcon } from '@/lib'
+</script>
 
-- 使用 Element Plus 对接并封装具有 Cyber 风格的组件
-- 为每个组件添加独立示例和文档页面
-- 增加在线 Playground 与可编辑示例
+<template>
+  <CButton type="primary" icon="search" @click="handleClick">
+    搜索
+  </CButton>
 
-欢迎开始在 `src/lib/` 下实现第一个组件：CButton 或 CInput。
+  <CButton type="secondary" plain round loading>
+    加载中
+  </CButton>
+
+  <CIcon name="close" :size="20" />
+</template>
+```
+
+#### CButton Props
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `type` | `'primary' \| 'secondary' \| 'ghost'` | `'primary'` | 按钮类型 |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | 尺寸 |
+| `icon` | `string` | `''` | 图标名称 |
+| `label` | `string` | `''` | 按钮文字 |
+| `plain` | `boolean` | `false` | 朴素样式 |
+| `round` | `boolean` | `false` | 圆角 |
+| `loading` | `boolean` | `false` | 加载状态 |
+| `disabled` | `boolean` | `false` | 禁用 |
+| `iconOnly` | `boolean` | `false` | 仅图标 |
+
+---
+
+## 🎨 主题
+
+主题通过 `data-theme` 属性切换，所有组件使用 CSS 变量，无需硬编码颜色。
+
+```html
+<!-- 深色（默认） -->
+<html data-theme="dark">
+
+<!-- 浅色 -->
+<html data-theme="light">
+```
+
+| Token | Dark | Light |
+| --- | --- | --- |
+| `--accent` | `#22d3ee` | `#0284c7` |
+| `--accent-2` | `#6366f1` | `#6366f1` |
+| `--text` | `#e8edf5` | `#0f172a` |
+| `--bg-solid` | `#0f1419` | `#ffffff` |
+
+主题定义位于 `src/styles/theme-dark.css` 与 `src/styles/theme-light.css`。
+
+---
+
+## 📁 项目结构
+
+```
+cyber-ui/
+├── index.html                 # 应用入口
+├── vite.config.js
+├── src/
+│   ├── main.js                # Vue 挂载 + 全局样式
+│   ├── App.vue                # 文档站布局
+│   ├── router/                # 路由（首页 / 组件文档）
+│   ├── views/                 # 页面视图
+│   ├── components/            # 文档站 UI（Header、CodeBlock…）
+│   ├── styles/
+│   │   ├── themes.css         # 主题入口 & 全局样式
+│   │   ├── theme-dark.css     # 深色 token
+│   │   └── theme-light.css    # 浅色 token
+│   └── lib/                   # 📦 组件库本体
+│       ├── index.js           # 统一导出
+│       ├── icons/             # 图标注册表
+│       └── components/        # CButton、CIcon…
+└── package.json
+```
+
+---
+
+## 🛠 脚本
+
+| 命令 | 说明 |
+| --- | --- |
+| `npm run dev` | 启动 Vite 开发服务器 |
+| `npm run build` | 生产环境构建 |
+| `npm run preview` | 预览构建结果 |
+| `npm run lint` | ESLint 检查并自动修复 |
+| `npm run lint:check` | ESLint 仅检查 |
+| `npm run format` | Prettier 格式化 |
+| `npm run format:check` | Prettier 格式检查 |
+
+---
+
+## 🧑‍💻 开发指南
+
+在 `src/lib/components/` 下新增组件，并在 `src/lib/index.js` 中导出：
+
+```js
+// src/lib/index.js
+export { default as CButton } from './components/CButton.vue'
+export { default as CYourComponent } from './components/CYourComponent.vue'
+```
+
+**约定：**
+
+1. 样式一律使用 `var(--accent)` 等 CSS 变量
+2. 同步编写 Demo 页面并在 `src/router/index.js` 注册路由
+3. 组件命名以 `C` 前缀区分（如 `CButton`、`CIcon`）
+
+---
+
+## 🗺 路线图
+
+- [x] 文档站骨架 & 路由
+- [x] Dark / Light 双主题
+- [x] `CButton` · `CIcon` 基础组件
+- [ ] 接入 Element Plus 并封装 Cyber 风格
+- [ ] `CInput` · `CBadge` 等表单 / 展示组件
+- [ ] 在线 Playground & 可编辑示例
+- [ ] npm 发包 & 独立文档部署
+
+---
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+1. Fork 本仓库
+2. 创建特性分支：`git checkout -b feat/amazing-feature`
+3. 提交改动：`git commit -m 'feat: add amazing feature'`
+4. 推送分支：`git push origin feat/amazing-feature`
+5. 发起 Pull Request
+
+---
+
+<div align="center">
+
+**如果这个项目对你有帮助，欢迎点个 ⭐ Star**
+
+Made with 💜 by [hopehyhp](https://github.com/hopehyhp)
+
+</div>
