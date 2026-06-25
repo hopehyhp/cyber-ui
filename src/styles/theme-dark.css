@@ -1,0 +1,54 @@
+/* 黑色系主题 — 深邃赛博，青蓝点缀 */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* 背景 */
+  --bg: linear-gradient(180deg, #0a0d14 0%, #0f1419 50%, #0a0d14 100%);
+  --bg-solid: #0f1419;
+  --body-bg: linear-gradient(180deg, #080b10 0%, #0f1419 40%, #0f1419 60%, #080b10 100%);
+
+  /* 表面 */
+  --surface: rgba(20, 25, 34, 0.85);
+  --surface-elevated: #1a2030;
+  --glass: rgba(255, 255, 255, 0.04);
+  --card-bg: rgba(20, 25, 34, 0.75);
+  --menu-bg: linear-gradient(180deg, rgba(20, 25, 34, 0.98), rgba(12, 15, 22, 0.98));
+
+  /* 文字 */
+  --text: #e8edf5;
+  --muted: #8b95a8;
+  --text-on-accent: #ffffff;
+
+  /* 强调色 — 青蓝 + 靛紫，克制不刺眼 */
+  --accent: #22d3ee;
+  --accent-2: #6366f1;
+  --accent-muted: rgba(34, 211, 238, 0.12);
+  --accent-border: rgba(34, 211, 238, 0.35);
+
+  /* 边框 & 阴影 */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --glow-color: rgba(34, 211, 238, 0.15);
+  --neon-glow: 0 4px 20px rgba(34, 211, 238, 0.2);
+
+  /* 色卡 */
+  --swatch-1: #22d3ee;
+  --swatch-2: #6366f1;
+  --swatch-3: #a78bfa;
+  --swatch-4: #34d399;
+
+  /* 代码块 */
+  --code-bg: rgba(8, 12, 20, 0.9);
+  --code-border: rgba(34, 211, 238, 0.15);
+  --code-header: rgba(255, 255, 255, 0.03);
+  --code-gutter: rgba(139, 149, 168, 0.5);
+  --code-gutter-bg: rgba(0, 0, 0, 0.25);
+  --hl-tag: #a5b4fc;
+  --hl-attr: #6ee7b7;
+  --hl-str: #f9a8d4;
+  --hl-num: #fcd34d;
+  --hl-comment: rgba(139, 149, 168, 0.7);
+}

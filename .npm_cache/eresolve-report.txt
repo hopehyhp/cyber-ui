@@ -1,0 +1,81 @@
+# npm resolution error report
+
+2026-06-25T06:46:04.671Z
+
+While resolving: cyber-ui@0.1.0
+Found: vite@4.5.14
+node_modules/vite
+  dev vite@"^4.4.9" from the root project
+
+Could not resolve dependency:
+peer vite@"^3.0.0" from @vitejs/plugin-vue@3.2.0
+node_modules/@vitejs/plugin-vue
+  dev @vitejs/plugin-vue@"^3.2.0" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force, or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
+
+Raw JSON explanation object:
+
+{
+  "code": "ERESOLVE",
+  "current": {
+    "name": "vite",
+    "version": "4.5.14",
+    "whileInstalling": {
+      "name": "cyber-ui",
+      "version": "0.1.0",
+      "path": "E:\\personal learning\\cyber-ui"
+    },
+    "location": "node_modules/vite",
+    "isWorkspace": false,
+    "dependents": [
+      {
+        "type": "dev",
+        "name": "vite",
+        "spec": "^4.4.9",
+        "from": {
+          "location": "E:\\personal learning\\cyber-ui"
+        }
+      }
+    ]
+  },
+  "currentEdge": {
+    "type": "dev",
+    "name": "vite",
+    "spec": "^4.4.9",
+    "from": {
+      "location": "E:\\personal learning\\cyber-ui"
+    }
+  },
+  "edge": {
+    "type": "peer",
+    "name": "vite",
+    "spec": "^3.0.0",
+    "error": "INVALID",
+    "from": {
+      "name": "@vitejs/plugin-vue",
+      "version": "3.2.0",
+      "whileInstalling": {
+        "name": "cyber-ui",
+        "version": "0.1.0",
+        "path": "E:\\personal learning\\cyber-ui"
+      },
+      "location": "node_modules/@vitejs/plugin-vue",
+      "isWorkspace": false,
+      "dependents": [
+        {
+          "type": "dev",
+          "name": "@vitejs/plugin-vue",
+          "spec": "^3.2.0",
+          "from": {
+            "location": "E:\\personal learning\\cyber-ui"
+          }
+        }
+      ]
+    }
+  },
+  "strictPeerDeps": false,
+  "force": false
+}

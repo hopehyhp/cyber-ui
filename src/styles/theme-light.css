@@ -1,0 +1,53 @@
+/* 白色系主题 — 清爽简约，蓝色强调 */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* 背景 */
+  --bg: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  --bg-solid: #ffffff;
+  --body-bg: linear-gradient(180deg, #ffffff 0%, #f8fafc 40%, #f1f5f9 60%, #eef2f7 100%);
+
+  /* 表面 */
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-elevated: #ffffff;
+  --glass: rgba(15, 23, 42, 0.03);
+  --card-bg: #ffffff;
+  --menu-bg: linear-gradient(180deg, #ffffff, #f8fafc);
+
+  /* 文字 */
+  --text: #0f172a;
+  --muted: #64748b;
+  --text-on-accent: #ffffff;
+
+  /* 强调色 */
+  --accent: #0284c7;
+  --accent-2: #6366f1;
+  --accent-muted: rgba(2, 132, 199, 0.08);
+  --accent-border: rgba(2, 132, 199, 0.35);
+
+  /* 边框 & 阴影 */
+  --border: rgba(15, 23, 42, 0.1);
+  --border-subtle: rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 2px 8px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 4px 12px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --glow-color: rgba(2, 132, 199, 0.12);
+  --neon-glow: 0 4px 16px rgba(2, 132, 199, 0.15);
+
+  /* 色卡 */
+  --swatch-1: #0284c7;
+  --swatch-2: #6366f1;
+  --swatch-3: #7c3aed;
+  --swatch-4: #059669;
+
+  /* 代码块 */
+  --code-bg: #f8fafc;
+  --code-border: rgba(2, 132, 199, 0.2);
+  --code-header: rgba(15, 23, 42, 0.03);
+  --code-gutter: rgba(100, 116, 139, 0.6);
+  --code-gutter-bg: rgba(15, 23, 42, 0.04);
+  --hl-tag: #4338ca;
+  --hl-attr: #047857;
+  --hl-str: #be185d;
+  --hl-num: #b45309;
+  --hl-comment: rgba(100, 116, 139, 0.8);
+}
