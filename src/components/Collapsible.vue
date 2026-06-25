@@ -11,7 +11,7 @@ export default {
   name: 'Collapsible',
   props: {
     modelValue: { type: Boolean, default: false },
-    duration: { type: Number, default: 260 }
+    duration: { type: Number, default: 260 },
   },
   data() {
     return {
@@ -21,8 +21,8 @@ export default {
         overflow: 'hidden',
         opacity: this.modelValue ? 1 : 0,
         transition: `max-height ${this.duration}ms cubic-bezier(.2,.9,.2,1), opacity ${this.duration}ms, transform ${this.duration}ms`,
-        willChange: 'max-height, opacity, transform'
-      }
+        willChange: 'max-height, opacity, transform',
+      },
     }
   },
   mounted() {
@@ -38,7 +38,7 @@ export default {
     modelValue(newVal) {
       if (newVal) this.show()
       else this.hide()
-    }
+    },
   },
   methods: {
     onTransitionEnd(e) {
@@ -62,7 +62,9 @@ export default {
       this.wrapperStyle.maxHeight = height + 'px'
       this.wrapperStyle.opacity = 1
       // after duration we'll emit update if needed (but actual finalization handled in transitionend)
-      this.animTimeout = setTimeout(() => { this.animTimeout = null }, this.duration + 50)
+      this.animTimeout = setTimeout(() => {
+        this.animTimeout = null
+      }, this.duration + 50)
     },
     hide() {
       const el = this.$refs.content
@@ -75,17 +77,23 @@ export default {
       void this.$refs.wrap.offsetHeight
       this.wrapperStyle.maxHeight = '0px'
       this.wrapperStyle.opacity = 0
-      this.animTimeout = setTimeout(() => { this.animTimeout = null }, this.duration + 50)
+      this.animTimeout = setTimeout(() => {
+        this.animTimeout = null
+      }, this.duration + 50)
     },
     afterOpen() {
       this.wrapperStyle.maxHeight = 'none'
       this.wrapperStyle.opacity = 1
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
-.collapsible { overflow: hidden; }
-.content { padding-top: 0.5rem; }
+.collapsible {
+  overflow: hidden;
+}
+.content {
+  padding-top: 0.5rem;
+}
 </style>

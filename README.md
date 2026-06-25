@@ -28,6 +28,7 @@ npm run dev
 主题与色卡
 
 当前支持两套主题（通过给 `html` 添加 `.theme-blue` 切换）:
+
 - 默认赛博（magenta / cyan）
 - 偏蓝赛博（blue / cyan）
 

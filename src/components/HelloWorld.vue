@@ -11,13 +11,14 @@ export default {
   props: {
     msg: {
       type: String,
-      default: 'Hello'
-    }
-  }
+      default: 'Hello',
+    },
+  },
 }
 </script>
 
 <style scoped>
-.hello { color: #2c3e50; }
+.hello {
+  color: #2c3e50;
+}
 </style>
-

@@ -6,7 +6,7 @@ export default {
   name: 'CIcon',
   props: {
     name: { type: String, required: true },
-    size: { type: [Number, String], default: 16 }
+    size: { type: [Number, String], default: 16 },
   },
   render() {
     const nodes = getIcon(this.name)
@@ -16,18 +16,25 @@ export default {
       }
       return null
     }
-    return h('svg', {
-      class: 'cicon',
-      width: this.size,
-      height: this.size,
-      viewBox: '0 0 24 24',
-      fill: 'none',
-      'aria-hidden': 'true'
-    }, nodes.map(([tag, attrs]) => h(tag, attrs)))
-  }
+    return h(
+      'svg',
+      {
+        class: 'cicon',
+        width: this.size,
+        height: this.size,
+        viewBox: '0 0 24 24',
+        fill: 'none',
+        'aria-hidden': 'true',
+      },
+      nodes.map(([tag, attrs]) => h(tag, attrs))
+    )
+  },
 }
 </script>
 
 <style scoped>
-.cicon { display: block; flex-shrink: 0; }
+.cicon {
+  display: block;
+  flex-shrink: 0;
+}
 </style>

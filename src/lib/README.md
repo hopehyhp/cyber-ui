@@ -3,28 +3,31 @@ Cyber UI 组件库 - 本地开发说明
 位置: src/lib/
 
 说明:
+
 - 这个目录用于放置未来我们基于 element-plus 封装的组件。
 - 每个组件应放到 `src/lib/components/`，并在本文件（或 `index.js`）中统一导出。
 - 建议同时提供组件的文档示例（MDX/Markdown + demo 组件），并在文档站点中引用。
 
 主题:
+
 - 主题色卡定义在 `src/styles/themes.css`，组件应使用 CSS 变量 (例如 var(--accent)) 来保证主题切换生效。
 
 示例:
 // src/lib/components/CButton.vue
-// export default { /* ... */ }
-
+// export default { /_ ... _/ }
 
 开发小贴士:
+
 - 未来我们会把 element-plus 加入依赖并在组件中按需引入样式与类型。
-// Cyber UI - component library entry (placeholder)
-// TODO: 在这里导出我们封装的组件，例如：
-// export { default as CButton } from './components/CButton.vue'
+  // Cyber UI - component library entry (placeholder)
+  // TODO: 在这里导出我们封装的组件，例如：
+  // export { default as CButton } from './components/CButton.vue'
 
 export default {
-  // 占位导出
+// 占位导出
 }
 <template>
+
   <div class="theme-switcher">
     <button :class="['tbtn', { active: current === 'default' }]" @click="set('default')">Default</button>
     <button :class="['tbtn', { active: current === 'blue' }]" @click="set('blue')">Blue</button>
@@ -93,48 +96,49 @@ export default {
 .nav a:hover { color:var(--accent-2) }
 .right { display:flex; align-items:center }
 </style>
-/* Global theme tokens for Cyber UI
-   - Default theme (root) is neon magenta/cyan cyberpunk
-   - .theme-blue overrides for a bluer variant
-   Toggle by adding/removing the 'theme-blue' class on <html> or documentElement
-*/
-:root {
-  --bg: #0b0710; /* very dark */
+
+/\* Global theme tokens for Cyber UI
+
+- Default theme (root) is neon magenta/cyan cyberpunk
+- .theme-blue overrides for a bluer variant
+  Toggle by adding/removing the 'theme-blue' class on <html> or documentElement
+  _/
+  :root {
+  --bg: #0b0710; /_ very dark _/
   --surface: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
-  --text: #e6edf3; /* off-white */
+  --text: #e6edf3; /_ off-white \*/
   --muted: #9aa6b2;
 
-  /* accents */
-  --accent: #ff00c8; /* neon magenta */
-  --accent-2: #00fff0; /* neon cyan */
-  --accent-3: #7b61ff; /* purple glow */
+/_ accents _/
+--accent: #ff00c8; /_ neon magenta _/
+--accent-2: #00fff0; /_ neon cyan _/
+--accent-3: #7b61ff; /_ purple glow _/
 
-  --glass: rgba(255,255,255,0.03);
-  --neon-glow: 0 4px 24px rgba(255,0,200,0.16);
+--glass: rgba(255,255,255,0.03);
+--neon-glow: 0 4px 24px rgba(255,0,200,0.16);
 }
 
-/* Blue-leaning cyberpunk variant */
+/_ Blue-leaning cyberpunk variant _/
 .theme-blue {
-  --bg: #071428; /* deep blue */
-  --surface: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.06));
-  --text: #dbeefb;
-  --muted: #8aa6bf;
+--bg: #071428; /_ deep blue _/
+--surface: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.06));
+--text: #dbeefb;
+--muted: #8aa6bf;
 
-  --accent: #04d9ff; /* bright cyan */
-  --accent-2: #0066ff; /* electric blue */
-  --accent-3: #00ffe1; /* aqua */
+--accent: #04d9ff; /_ bright cyan _/
+--accent-2: #0066ff; /_ electric blue _/
+--accent-3: #00ffe1; /_ aqua _/
 
-  --glass: rgba(255,255,255,0.02);
-  --neon-glow: 0 6px 30px rgba(4,217,255,0.12);
+--glass: rgba(255,255,255,0.02);
+--neon-glow: 0 6px 30px rgba(4,217,255,0.12);
 }
 
-/* Base page styles that use tokens */
+/_ Base page styles that use tokens _/
 html,body,#app { height:100%; }
 body { margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
 
-/* simple utility */
+/_ simple utility _/
 .container { box-sizing:border-box }
 
-/* simple card */
+/_ simple card _/
 .card { background:var(--surface); border-radius:10px; padding:16px; box-shadow:var(--neon-glow) }
-

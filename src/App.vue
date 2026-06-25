@@ -2,18 +2,18 @@
   <div id="app" class="app">
     <SiteHeader @change-theme="applyTheme" />
     <main class="container">
-      <router-view/>
+      <router-view />
     </main>
     <footer class="footer">© 2026 Cyber UI — 组件库官网骨架</footer>
   </div>
 </template>
 
 <script>
-import {defineComponent} from "vue";
-import SiteHeader from "./components/SiteHeader.vue";
+import { defineComponent } from 'vue'
+import SiteHeader from './components/SiteHeader.vue'
 
 export default defineComponent({
-  components: {SiteHeader},
+  components: { SiteHeader },
   mounted() {
     try {
       const raw = localStorage.getItem('theme') || 'dark'
@@ -22,16 +22,22 @@ export default defineComponent({
         document.documentElement.setAttribute('data-theme', t)
       }
       if (raw !== t) localStorage.setItem('theme', t)
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+      /* ignore */
+    }
   },
   methods: {
     applyTheme(theme) {
-      try { localStorage.setItem('theme', theme) } catch (e) { /* ignore */ }
+      try {
+        localStorage.setItem('theme', theme)
+      } catch (e) {
+        /* ignore */
+      }
       if (typeof document !== 'undefined' && document.documentElement) {
         document.documentElement.setAttribute('data-theme', theme)
       }
-    }
-  }
+    },
+  },
 })
 </script>
 

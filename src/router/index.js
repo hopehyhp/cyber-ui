@@ -5,7 +5,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/components',
@@ -15,35 +15,35 @@ const routes = [
       {
         path: '',
         name: 'ComponentsIndex',
-        component: () => import('../views/ComponentsIndex.vue')
+        component: () => import('../views/ComponentsIndex.vue'),
       },
       {
         path: 'button',
         name: 'Button',
-        component: () => import('../lib/components/ButtonDemo.vue')
+        component: () => import('../lib/components/ButtonDemo.vue'),
       },
       {
         path: 'input',
         name: 'Input',
-        component: () => import('../lib/components/CInput.vue')
+        component: () => import('../lib/components/CInput.vue'),
       },
       {
         path: 'badge',
         name: 'Badge',
-        component: () => import('../lib/components/CBadge.vue')
+        component: () => import('../lib/components/CBadge.vue'),
       },
       {
         path: 'palette',
         name: 'Palette',
-        component: () => import('../lib/components/PaletteShowcase.vue')
-      }
-    ]
-  }
+        component: () => import('../lib/components/PaletteShowcase.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 
 export default router

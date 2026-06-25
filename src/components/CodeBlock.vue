@@ -3,12 +3,7 @@
     <div class="codeblock-header">
       <span v-if="lang" class="codeblock-lang">{{ lang }}</span>
       <span v-else class="codeblock-lang codeblock-lang--dot" aria-hidden="true"></span>
-      <button
-        class="copy-btn"
-        type="button"
-        @click="copy"
-        :aria-label="copied ? 'Copied' : 'Copy'"
-      >
+      <button class="copy-btn" type="button" @click="copy" :aria-label="copied ? 'Copied' : 'Copy'">
         <span class="copy-icon">{{ copied ? '✓' : '⎘' }}</span>
         {{ copied ? '已复制' : '复制' }}
       </button>
@@ -24,10 +19,7 @@
 
 <script>
 function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 function highlightCode(txt) {
@@ -40,7 +32,8 @@ function highlightCode(txt) {
   // 属性必须先于标签，否则 class="hl-tag" 会被二次匹配破坏结构
   out = out.replace(
     /(\s+)([:@]?[a-zA-Z][a-zA-Z0-9:@-]*)(=)(&quot;.*?&quot;|'.*?'|[^\s>]+)/g,
-    (_, sp, name, eq, val) => `${sp}<span class="hl-attr">${name}</span>${eq}<span class="hl-str">${val}</span>`
+    (_, sp, name, eq, val) =>
+      `${sp}<span class="hl-attr">${name}</span>${eq}<span class="hl-str">${val}</span>`
   )
   out = out.replace(
     /(&lt;\/?)([a-zA-Z][a-zA-Z0-9:-]*)/g,
@@ -53,9 +46,11 @@ export default {
   name: 'CodeBlock',
   props: {
     code: { type: String, default: '' },
-    lang: { type: String, default: '' }
+    lang: { type: String, default: '' },
   },
-  data() { return { copied: false } },
+  data() {
+    return { copied: false }
+  },
   computed: {
     source() {
       return this.code
@@ -67,7 +62,7 @@ export default {
     },
     highlightedLines() {
       return this.lines.map(line => highlightCode(line))
-    }
+    },
   },
   methods: {
     async copy() {
@@ -75,7 +70,9 @@ export default {
       try {
         await navigator.clipboard.writeText(text)
         this.copied = true
-        setTimeout(() => { this.copied = false }, 1200)
+        setTimeout(() => {
+          this.copied = false
+        }, 1200)
       } catch (e) {
         const ta = document.createElement('textarea')
         ta.value = text
@@ -84,10 +81,12 @@ export default {
         document.execCommand('copy')
         document.body.removeChild(ta)
         this.copied = true
-        setTimeout(() => { this.copied = false }, 1200)
+        setTimeout(() => {
+          this.copied = false
+        }, 1200)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -97,7 +96,9 @@ export default {
   overflow: hidden;
   border: 1px solid var(--code-border);
   background: var(--code-bg);
-  box-shadow: var(--shadow-md), inset 0 1px 0 var(--border-subtle);
+  box-shadow:
+    var(--shadow-md),
+    inset 0 1px 0 var(--border-subtle);
 }
 
 .codeblock-header {
@@ -140,7 +141,10 @@ export default {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    background 0.15s,
+    border-color 0.15s;
 }
 
 .copy-btn:hover {
@@ -193,9 +197,21 @@ export default {
   color: var(--text);
 }
 
-:deep(.hl-tag) { color: var(--hl-tag); font-weight: 600; }
-:deep(.hl-attr) { color: var(--hl-attr); }
-:deep(.hl-str) { color: var(--hl-str); }
-:deep(.hl-num) { color: var(--hl-num); }
-:deep(.hl-comment) { color: var(--hl-comment); font-style: italic; }
+:deep(.hl-tag) {
+  color: var(--hl-tag);
+  font-weight: 600;
+}
+:deep(.hl-attr) {
+  color: var(--hl-attr);
+}
+:deep(.hl-str) {
+  color: var(--hl-str);
+}
+:deep(.hl-num) {
+  color: var(--hl-num);
+}
+:deep(.hl-comment) {
+  color: var(--hl-comment);
+  font-style: italic;
+}
 </style>

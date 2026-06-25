@@ -7,4 +7,3 @@ export { icons, getIcon, registerIcon } from './icons'
 export default {
   // named exports above
 }
-

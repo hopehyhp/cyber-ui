@@ -14,7 +14,7 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
 export default {
   name: 'SiteHeader',
   components: { ThemeSwitcher },
-  emits: ['change-theme']
+  emits: ['change-theme'],
 }
 </script>
 
@@ -66,5 +66,7 @@ export default {
   background: var(--accent);
 }
 /* position ThemeSwitcher neatly */
-.site-header > *:last-child { margin-left: 1rem }
+.site-header > *:last-child {
+  margin-left: 1rem;
+}
 </style>

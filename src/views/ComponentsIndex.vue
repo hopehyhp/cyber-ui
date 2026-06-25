@@ -10,6 +10,10 @@ export default { name: 'ComponentsIndex' }
 </script>
 
 <style scoped>
-.card { padding:1.25rem }
-.kv { color:var(--muted) }
+.card {
+  padding: 1.25rem;
+}
+.kv {
+  color: var(--muted);
+}
 </style>

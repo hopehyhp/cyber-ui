@@ -50,7 +50,9 @@
   color: var(--muted);
   text-decoration: none;
   border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .component-nav a:hover {
