@@ -20,22 +20,22 @@ const routes = [
       {
         path: 'button',
         name: 'Button',
-        component: () => import('../lib/components/ButtonDemo.vue'),
+        component: () => import('../demos/ButtonDemo.vue'),
       },
       {
         path: 'input',
         name: 'Input',
-        component: () => import('../lib/components/CInput.vue'),
+        component: () => import('../demos/InputDemo.vue'),
       },
       {
         path: 'badge',
         name: 'Badge',
-        component: () => import('../lib/components/CBadge.vue'),
+        component: () => import('../demos/BadgeDemo.vue'),
       },
       {
         path: 'palette',
         name: 'Palette',
-        component: () => import('../lib/components/PaletteShowcase.vue'),
+        component: () => import('../demos/PaletteShowcase.vue'),
       },
     ],
   },

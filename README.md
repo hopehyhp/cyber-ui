@@ -91,7 +91,7 @@ npm run preview    # 预览构建产物
 | `CButton` | ✅ 可用 | `/components/button` |
 | `CIcon` | ✅ 可用 | — |
 | `Palette` | ✅ 可用 | `/components/palette` |
-| `CInput` | 🚧 规划中 | `/components/input` |
+| `CInput` | ✅ 可用 | `/components/input` |
 | `CBadge` | 🚧 规划中 | `/components/badge` |
 
 ### 使用示例
@@ -158,18 +158,20 @@ import { CButton, CIcon } from '@/lib'
 ```
 cyber-ui/
 ├── index.html                 # 应用入口
-├── vite.config.js
+├── vite.config.js             # 文档站构建
+├── vite.lib.config.js         # 组件库构建
 ├── src/
 │   ├── main.js                # Vue 挂载 + 全局样式
 │   ├── App.vue                # 文档站布局
 │   ├── router/                # 路由（首页 / 组件文档）
 │   ├── views/                 # 页面视图
+│   ├── demos/                 # 组件文档 Demo（不发布）
 │   ├── components/            # 文档站 UI（Header、CodeBlock…）
 │   ├── styles/
 │   │   ├── themes.css         # 主题入口 & 全局样式
 │   │   ├── theme-dark.css     # 深色 token
 │   │   └── theme-light.css    # 浅色 token
-│   └── lib/                   # 📦 组件库本体
+│   └── lib/                   # 📦 组件库本体（npm 发布）
 │       ├── index.js           # 统一导出
 │       ├── icons/             # 图标注册表
 │       └── components/        # CButton、CIcon…
@@ -183,7 +185,8 @@ cyber-ui/
 | 命令 | 说明 |
 | --- | --- |
 | `npm run dev` | 启动 Vite 开发服务器 |
-| `npm run build` | 生产环境构建 |
+| `npm run build` | 生产环境构建（文档站） |
+| `npm run build:lib` | 组件库构建（npm 发布产物） |
 | `npm run preview` | 预览构建结果 |
 | `npm run lint` | ESLint 检查并自动修复 |
 | `npm run lint:check` | ESLint 仅检查 |
@@ -194,7 +197,7 @@ cyber-ui/
 
 ## 🧑‍💻 开发指南
 
-在 `src/lib/components/` 下新增组件，并在 `src/lib/index.js` 中导出：
+在 `src/lib/components/` 下新增组件，并在 `src/lib/index.js` 中导出。Demo 页面放在 `src/demos/`：
 
 ```js
 // src/lib/index.js
@@ -205,8 +208,9 @@ export { default as CYourComponent } from './components/CYourComponent.vue'
 **约定：**
 
 1. 样式一律使用 `var(--accent)` 等 CSS 变量
-2. 同步编写 Demo 页面并在 `src/router/index.js` 注册路由
+2. 在 `src/demos/` 编写 Demo，并在 `src/router/index.js` 注册路由
 3. 组件命名以 `C` 前缀区分（如 `CButton`、`CIcon`）
+4. 发包前执行 `npm run build:lib`，使用者需 `import 'cyber-ui/styles'`
 
 ---
 
@@ -216,9 +220,10 @@ export { default as CYourComponent } from './components/CYourComponent.vue'
 - [x] Dark / Light 双主题
 - [x] `CButton` · `CIcon` 基础组件
 - [ ] 接入 Element Plus 并封装 Cyber 风格
-- [ ] `CInput` · `CBadge` 等表单 / 展示组件
+- [x] `CInput` 输入框
+- [ ] `CBadge` 等展示组件
 - [ ] 在线 Playground & 可编辑示例
-- [ ] npm 发包 & 独立文档部署
+- [ ] npm 发包 & 独立文档部署（`npm run build:lib` 已就绪）
 
 ---
 
