@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <SiteHeader @change-theme="applyTheme" />
-    <main class="container">
+    <main :class="isDocsRoute ? 'docs-root' : 'container'">
       <router-view />
     </main>
     <footer class="footer">© 2026 Cyber UI — 组件库官网骨架</footer>
@@ -14,6 +14,11 @@ import SiteHeader from './components/SiteHeader.vue'
 
 export default defineComponent({
   components: { SiteHeader },
+  computed: {
+    isDocsRoute() {
+      return this.$route.path.startsWith('/components')
+    },
+  },
   mounted() {
     try {
       const raw = localStorage.getItem('theme') || 'dark'
@@ -56,6 +61,14 @@ export default defineComponent({
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+.docs-root {
+  flex: 1;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .footer {
