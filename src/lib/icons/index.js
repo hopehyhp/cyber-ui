@@ -53,6 +53,18 @@ export const icons = {
       },
     ],
   ],
+  'chevron-down': [
+    [
+      'path',
+      {
+        d: 'M6 9l6 6 6-6',
+        stroke: 'currentColor',
+        'stroke-width': 1.6,
+        'stroke-linecap': 'round',
+        'stroke-linejoin': 'round',
+      },
+    ],
+  ],
   user: [
     ['circle', { cx: 12, cy: 8, r: 4, stroke: 'currentColor', 'stroke-width': 1.6 }],
     [

@@ -5,9 +5,46 @@
 :root {
   --header-height: 60px;
   --transition: 250ms;
+
+  /* 圆角 */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* 边框宽度 */
+  --border-width: 1px;
+  --border-width-md: 2px;
+
+  /* 字体 */
+  --font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-family-mono: ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
 }
 
 /* Reset + base */
@@ -19,15 +56,9 @@
 
 body {
   margin: 0;
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   background: var(--body-bg);
   background-repeat: no-repeat;
   color: var(--text);
@@ -176,4 +207,13 @@ body {
 .lead {
   color: var(--muted);
   font-size: 1.05rem;
+}
+
+/* Demo pages */
+.demo-card > .card-head {
+  margin-bottom: 0.75rem;
+}
+.demo-card > .card-head .demo-title,
+.demo-card > .card-head .section-title {
+  margin: 0;
 }

@@ -28,9 +28,9 @@ export const componentGroups = [
     categoryLabel: '表单',
     items: [
       { name: 'Input', label: '输入框', to: '/components/input', ready: true },
-      { name: 'Select', label: '选择器', ready: false },
-      { name: 'Switch', label: '开关', ready: false },
-      { name: 'Checkbox', label: '多选框', ready: false },
+      { name: 'Select', label: '选择器', to: '/components/select', ready: true },
+      { name: 'Switch', label: '开关', to: '/components/switch', ready: true },
+      { name: 'Checkbox', label: '多选框', to: '/components/checkbox', ready: true },
     ],
   },
   {
@@ -38,17 +38,17 @@ export const componentGroups = [
     categoryLabel: '主题',
     items: [
       { name: 'Palette', label: '色彩', to: '/components/palette', ready: true },
-      { name: 'Typography', label: '字体', ready: false },
-      { name: 'Border', label: '边框', ready: false },
+      { name: 'Typography', label: '字体', to: '/components/typography', ready: true },
+      { name: 'Border', label: '边框', to: '/components/border', ready: true },
     ],
   },
   {
     category: 'Data',
     categoryLabel: '数据',
     items: [
-      { name: 'Table', label: '表格', ready: false },
-      { name: 'Tag', label: '标签', ready: false },
-      { name: 'Progress', label: '进度条', ready: false },
+      { name: 'Table', label: '表格', to: '/components/table', ready: true },
+      { name: 'Tag', label: '标签', to: '/components/tag', ready: true },
+      { name: 'Progress', label: '进度条', to: '/components/progress', ready: true },
     ],
   },
   {
@@ -57,6 +57,7 @@ export const componentGroups = [
     items: [
       { name: 'Alert', label: '警告', ready: false },
       { name: 'Message', label: '消息提示', ready: false },
+      { name: 'Tooltip', label: '文字提示', to: '/components/tooltip', ready: true },
       { name: 'Dialog', label: '对话框', ready: false },
     ],
   },

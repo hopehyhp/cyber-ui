@@ -28,6 +28,21 @@ const routes = [
         component: () => import('../demos/InputDemo.vue'),
       },
       {
+        path: 'select',
+        name: 'Select',
+        component: () => import('../demos/SelectDemo.vue'),
+      },
+      {
+        path: 'switch',
+        name: 'Switch',
+        component: () => import('../demos/SwitchDemo.vue'),
+      },
+      {
+        path: 'checkbox',
+        name: 'Checkbox',
+        component: () => import('../demos/CheckboxDemo.vue'),
+      },
+      {
         path: 'badge',
         name: 'Badge',
         component: () => import('../demos/BadgeDemo.vue'),
@@ -36,6 +51,36 @@ const routes = [
         path: 'palette',
         name: 'Palette',
         component: () => import('../demos/PaletteShowcase.vue'),
+      },
+      {
+        path: 'typography',
+        name: 'Typography',
+        component: () => import('../demos/TypographyDemo.vue'),
+      },
+      {
+        path: 'border',
+        name: 'Border',
+        component: () => import('../demos/BorderDemo.vue'),
+      },
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('../demos/TableDemo.vue'),
+      },
+      {
+        path: 'tag',
+        name: 'Tag',
+        component: () => import('../demos/TagDemo.vue'),
+      },
+      {
+        path: 'progress',
+        name: 'Progress',
+        component: () => import('../demos/ProgressDemo.vue'),
+      },
+      {
+        path: 'tooltip',
+        name: 'Tooltip',
+        component: () => import('../demos/TooltipDemo.vue'),
       },
     ],
   },
