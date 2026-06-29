@@ -92,6 +92,10 @@ npm run preview    # 预览构建产物
 | `CIcon` | ✅ 可用 | — |
 | `Palette` | ✅ 可用 | `/components/palette` |
 | `CInput` | ✅ 可用 | `/components/input` |
+| `CSelect` | ✅ 可用 | `/components/select` |
+| `CSwitch` | ✅ 可用 | `/components/switch` |
+| `CCheckbox` | ✅ 可用 | `/components/checkbox` |
+| `CTable` | ✅ 可用 | `/components/table` |
 | `CBadge` | 🚧 规划中 | `/components/badge` |
 
 ### 使用示例
@@ -221,6 +225,10 @@ export { default as CYourComponent } from './components/CYourComponent.vue'
 - [x] `CButton` · `CIcon` 基础组件
 - [ ] 接入 Element Plus 并封装 Cyber 风格
 - [x] `CInput` 输入框
+- [x] `CSelect` 选择器 · `CSwitch` 开关 · `CCheckbox` 多选框
+- [x] `CTable` 表格
+- [x] `CTag` 标签 · `CProgress` 进度条
+- [x] Typography 字体 · Border 边框 token 文档
 - [ ] `CBadge` 等展示组件
 - [ ] 在线 Playground & 可编辑示例
 - [ ] npm 发包 & 独立文档部署（`npm run build:lib` 已就绪）
