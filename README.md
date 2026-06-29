@@ -12,7 +12,7 @@
 [![Vite](https://img.shields.io/badge/Vite-4.5-646cff?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Status](https://img.shields.io/badge/Status-Early%20Development-orange)](https://github.com/hopehyhp/cyber-ui)
 
-[Quick Start](#-quick-start) · [Component Docs](#-component-docs) · [Issues](https://github.com/hopehyhp/cyber-ui/issues)
+[Live Demo](https://ui.hopehu.cloud/) · [Quick Start](#-quick-start) · [Component Docs](#-component-docs) · [Issues](https://github.com/hopehyhp/cyber-ui/issues)
 
 <br />
 
